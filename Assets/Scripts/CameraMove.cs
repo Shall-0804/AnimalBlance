@@ -1,0 +1,20 @@
+using UnityEngine;
+
+public class CameraMove : MonoBehaviour
+{
+    [SerializeField] GameObject Player;
+    float cameraPosZ;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        cameraPosZ = Player.transform.position.z;
+
+        transform.position = new Vector3(0,15,cameraPosZ-3);
+    }
+}
