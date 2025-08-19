@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Rigidbody PlayerRb;
     const int SPEED = 600;
-    const int POWER = 400;
+    
 
     bool finish;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,18 +21,12 @@ public class PlayerController : MonoBehaviour
         if (finish) {return;}
 
         //ëOÇ…êiÇﬁèàóù
-        PlayerRb.AddForce(SPEED * transform.forward * Time.deltaTime);
-        //â°Ç…à⁄ìÆ
-        //ç∂
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.W))
         {
-            PlayerRb.AddForce(POWER * -transform.right * Time.deltaTime);
+            PlayerRb.AddForce(SPEED * transform.forward * Time.deltaTime);
         }
-        //âE
-        if (Input.GetKey(KeyCode.D))
-        {
-            PlayerRb.AddForce(POWER * transform.right * Time.deltaTime);
-        }
+        
+       
 
     }
     private void OnTriggerEnter(Collider other)

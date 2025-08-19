@@ -15,6 +15,6 @@ public class CameraController : MonoBehaviour
     {
         cameraPosZ = Player.transform.position.z;
 
-        transform.position = new Vector3(0,15,cameraPosZ-3);
+        transform.position = new Vector3(0,13,cameraPosZ-6);
     }
 }
