@@ -17,12 +17,12 @@ public class PlayerBalanceController : MonoBehaviour
         //ç∂
         if (Input.GetKey(KeyCode.A))
         {
-          transform.Rotate(0, 0, 0.5f);
+          transform.Rotate(0, 0, 2f);
         }
         //âE
         if (Input.GetKey(KeyCode.D))
         {
-          transform.Rotate(0, 0, -0.5f);
+          transform.Rotate(0, 0, -2f);
         }
     }
 }
