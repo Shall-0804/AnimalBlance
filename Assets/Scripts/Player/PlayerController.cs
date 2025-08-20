@@ -1,14 +1,15 @@
-using System.Runtime.CompilerServices;
+using System;
 using UnityEngine;
-using UnityEngine.Rendering;
+
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] Rigidbody PlayerRb;
     const int SPEED = 800;
     const int JUMP = 500;
-    
 
+    public event Action DamageAction;
+    
     protected bool finish;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,4 +52,16 @@ public class PlayerController : MonoBehaviour
             PlayerRb.linearVelocity = Vector3.zero;
         }
     }
+
+    //è·äQï®Ç…ìñÇΩÇ¡ÇΩéûÇÃèàóù
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Obstacles")
+        {
+            Destroy(collision.gameObject);
+            DamageAction?.Invoke();
+        }
+    }
+
+
 }
