@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DamageController : PlayerStatusController 
 {
     [SerializeField]PlayerController playerController;
     public event Action ReGenarate;
+    public event Action Death;
 
     void Start()
     {
@@ -24,6 +26,12 @@ public class DamageController : PlayerStatusController
         elseÅ@if (Hp <= 0)
         {
             Debug.Log("éÄÇÒÇæ" + Hp);
+            DeathHp--;
+            if (DeathHp < 0)
+            {
+                SceneManager.LoadScene("Death");
+            }
+            Death?.Invoke();
             ReGenarate?.Invoke();
             
         }

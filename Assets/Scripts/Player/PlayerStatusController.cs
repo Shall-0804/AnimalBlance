@@ -5,6 +5,7 @@ public class PlayerStatusController : MonoBehaviour
 {
     [SerializeField] Slider HPBer;
     protected int Hp = 10;
+    protected int DeathHp = 3;
 
     Vector3 originalPlayerPos;
     void Start()
