@@ -6,7 +6,7 @@ public class GameFinishManager : MonoBehaviour
     
     Vector3 originalPlayerPos;
     float time = 0f;
-    const float TIME_NUM = 2f;
+    const float TIME_NUM = 3f;
     private void Start()
     {
         originalPlayerPos = transform.position;

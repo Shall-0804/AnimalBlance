@@ -5,7 +5,7 @@ public class ObstaclesGenarate : MonoBehaviour
 {
     [SerializeField] GameObject Obstacles;
     [SerializeField]DamageController damageController;
-    int[] obstaclesPos = { 4, 17, 26, 36,40,48,56,70,100,122,143,168};
+    int[] obstaclesPos = { 5, 20, 30, 40,45,53,59,72,103,114,123,143,160};
   
     void Start()
     {

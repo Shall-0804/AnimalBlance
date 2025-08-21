@@ -13,16 +13,17 @@ public class PlayerBalanceController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         //â°Ç…à⁄ìÆ
         //ç∂
         if (Input.GetKey(KeyCode.A))
         {
-          transform.Rotate(0, 0, 2f);
+           transform.Rotate(0, 0, 1f);
         }
         //âE
         if (Input.GetKey(KeyCode.D))
         {
-          transform.Rotate(0, 0, -2f);
+            transform.Rotate(0, 0, -1f);
         }
     }
 }

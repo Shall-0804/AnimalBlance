@@ -1,22 +1,23 @@
 using TMPro;
 using UnityEngine;
 
-public class FinishUIController : PlayerController
+public class FinishUIController : MonoBehaviour
 {
     [SerializeField] GameObject FinishText;
+    [SerializeField] PlayerController playerController;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        playerController.FinishAction += FinishTextActive;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (finish)
-        {
-            FinishText.SetActive(true);
-        }
+    }
+    void FinishTextActive()
+    {
+        FinishText.SetActive(true);
     }
 }

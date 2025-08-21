@@ -6,10 +6,12 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] Rigidbody PlayerRb;
     const int SPEED = 800;
-    const int JUMP = 500;
+  
 
     public event Action DamageAction;
-    
+    public event Action JumpAction;
+    public event Action FinishAction;
+
     protected bool finish;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -39,6 +41,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            JumpAction?.Invoke();
             transform.position = transform.position + new Vector3(0, 1.5f, 0);
         }
 
@@ -48,7 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.tag == "Finish")
         {
-            finish = true;  
+            FinishAction?.Invoke();
+            finish = true;
             PlayerRb.linearVelocity = Vector3.zero;
         }
     }
